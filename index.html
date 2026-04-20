@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <article data-testid="test-profile-card" aria-label="User profile card">
+
+    <div class="card-header">
+      <div class="identity-row">
+
+        <figure class="avatar-figure">
+          <img data-testid="test-user-avatar" src="./picsofme.jpg" alt="" width="100" height="100" />
+        </figure>
+
+        <div class="identity-text">
+          <h1 data-testid="test-user-name">Ayodeji Adetayo</h1>
+          <span class="role-badge">Full-Stack Developer</span>
+          <div class="time-pill" aria-label="Current epoch time in milliseconds">
+            <span>⏱</span>
+            <time data-testid="test-user-time" id="epoch-time" aria-live="polite"
+              aria-label="Current time in milliseconds"></time> ms
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-body">
+
+      <p data-testid="test-user-bio">
+        Welcome! I'm a passionate Full Stack Developer specializing in building exceptional digital experiences.I
+        transform
+        complex problems into elegant, user-friendly solutions.
+
+      </p>
+
+      <nav data-testid="test-user-social-links" aria-label="Social media links">
+        <a data-testid="test-user-social-twitter" href="https://twitter.com/dejidv" target="_blank"
+          rel="noopener noreferrer" aria-label="Ayodeji Adetayo on Twitter (opens in new tab)">
+          <span class="social-icon" aria-hidden="true">𝕏</span> Twitter
+        </a>
+        <a data-testid="test-user-social-github" href="https://github.com/dejidev" target="_blank"
+          rel="noopener noreferrer" aria-label="Ayodeji Adetayo on GitHub (opens in new tab)">
+          <span class="social-icon" aria-hidden="true">⌥</span> GitHub
+        </a>
+        <a data-testid="test-user-social-linkedin" href="https://www.linkedin.com/in/adetayo-ayodeji" target="_blank"
+          rel="noopener noreferrer" aria-label="Ayodeji Adetayo on LinkedIn (opens in new tab)">
+          <span class="social-icon" aria-hidden="true">in</span> LinkedIn
+        </a>
+        <!-- <a data-testid="test-user-social-instagram" href="https://instagram.com/alexrivera" target="_blank"
+          rel="noopener noreferrer" aria-label="Ayodeji Adetayo on Instagram (opens in new tab)">
+          <span class="social-icon" aria-hidden="true">◎</span> Instagram
+        </a> -->
+      </nav>
+
+      <div class="lists-grid">
+
+        <section aria-labelledby="hobbies-heading">
+          <h2 id="hobbies-heading" class="hobbies-heading">
+            <span class="dot" aria-hidden="true"></span>
+            Hobbies
+          </h2>
+          <ul data-testid="test-user-hobbies" aria-label="List of hobbies">
+            <li>Open-source contribution</li>
+            <li>Photography & street art</li>
+            <li>Playing chess online</li>
+            <li>Building mechanical keyboards</li>
+            <li>Trail running</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="dislikes-heading">
+          <h2 id="dislikes-heading" class="dislikes-heading">
+            <span class="dot" aria-hidden="true"></span>
+            Dislikes
+          </h2>
+          <ul data-testid="test-user-dislikes" aria-label="List of dislikes">
+            <li>Unreadable spaghetti code</li>
+            <li>Slow internet connections</li>
+            <li>Meetings without agendas</li>
+            <li>Dark patterns in UX</li>
+            <li>Unnecessary complexity</li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+  </article>
+
+  <script>
+    (function () {
+      const el = document.getElementById('epoch-time');
+      function tick() {
+        const now = Date.now();
+        el.textContent = now;
+        el.setAttribute('datetime', new Date(now).toISOString());
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+
+</html>
